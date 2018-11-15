@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-deeplinks"
+        version="1.0.0">
+
+  <name>Cordova Plugin for Deeplink</name>
+  <description></description>
+    <license>MIT</license>
+    <keywords></keywords>
+ 
+  <dependency id="cordova-plugin-genie-sdk" url="https://github.com/project-sunbird/cordova-plugin-genie-sdk.git"/>
+  <dependency id="cordova-plugin-sunbirdsplash" url="https://github.com/ankur01oct/cordova-plugin-sunbirdsplash.git#test"/>
+  <framework src="build-extras.gradle" custom="true" type="gradleReference"/>
+  
+  <asset src="www/plugin.js" target="js/plugin.js"/>
+
+  <js-module src="www/plugin.js" name="plugin">
+    <clobbers target="deeplinks" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="deeplinks">
+        <param name="android-package" value="org.sunbird.DeepLinkImp"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/org/sunbird/DeepLinkImp.java" target-dir="src/org/sunbird/"/>
+    <source-file src="src/android/org/sunbird/ImportExportUtil.java" target-dir="src/org/sunbird/"/>
+    <source-file src="src/android/org/sunbird/deeplinks/DeepLinkUtility.java" target-dir="src/org/sunbird/deeplinks"/>
+    <source-file src="src/android/org/sunbird/deeplinks/DeepLinkNavigation.java" target-dir="src/org/sunbird/deeplinks"/>
+  </platform>
+
+  <!-- <platform name="ios">
+    
+    <config-file target="config.xml" parent="/widget">
+      <feature name="Hello">
+        <param name="ios-package" value="HWPHello" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/HWPHello.h" target-dir="HelloPlugin"/>
+    <source-file src="src/ios/HWPHello.m" target-dir="HelloPlugin"/>
+  </platform>
+
+  <platform name="wp7">
+    <source-file src="src/wp7/Hello.cs"/>
+  </platform> -->
+
+</plugin>

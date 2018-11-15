@@ -1,0 +1,23 @@
+{
+  "name": "cordova-plugin-hello",
+  "version": "1.0.0",
+  "description": "A sample for a new cordova plugin",
+  "cordova": {
+    "id": "cordova-plugin-deeplinks",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "deeplinks",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Sunbird Team",
+  "license": "MIT"
+}
