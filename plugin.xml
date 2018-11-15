@@ -9,7 +9,7 @@
     <keywords></keywords>
  
   <dependency id="cordova-plugin-genie-sdk" url="https://github.com/project-sunbird/cordova-plugin-genie-sdk.git"/>
-  <dependency id="cordova-plugin-sunbirdsplash" url="https://github.com/ankur01oct/cordova-plugin-sunbirdsplash.git#test"/>
+  <!-- <dependency id="cordova-plugin-sunbirdsplash" url="https://github.com/ankur01oct/cordova-plugin-sunbirdsplash.git#test"/> -->
   <framework src="build-extras.gradle" custom="true" type="gradleReference"/>
   
   <asset src="www/plugin.js" target="js/plugin.js"/>
