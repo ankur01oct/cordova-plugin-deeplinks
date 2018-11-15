@@ -1,5 +1,5 @@
 {
-  "name": "cordova-plugin-hello",
+  "name": "cordova-plugin-deeplinks",
   "version": "1.0.0",
   "description": "A sample for a new cordova plugin",
   "cordova": {

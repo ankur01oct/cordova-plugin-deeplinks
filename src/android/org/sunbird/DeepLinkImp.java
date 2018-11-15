@@ -30,7 +30,7 @@ import java.util.ArrayList;
  * Created by Ankur on 14-Nov-18.
  */
 
-public class DeepLinkImp {
+public class DeepLinkImp extends CordovaPlugin{
   private String localeSelected;
   private Intent deepLinkIntent;
   private DeepLinkNavigation mDeepLinkNavigation;
@@ -44,9 +44,28 @@ public class DeepLinkImp {
   private static final int NOT_COMPATIBLE = 6;
   private static final int CONTENT_EXPIRED = 7;
   private static final int ALREADY_EXIST = 8;
+  private static final String TAG = "deeplinksPlugin";
 
 
 
+  
+  @Override
+  public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
+
+      if (action.equals("greet")) {
+
+          String name = data.getString(0);
+          String message = "Hello, " + name;
+          callbackContext.success(message);
+          LOG.d(TAG,message);
+          return true;
+
+      } else {
+          
+          return true;
+
+      }
+  }
 
   SplashScreen splashScr;
   public void handleIntentForDeeplinking(Activity activity, Intent intent, SplashScreen splashScreen) {
