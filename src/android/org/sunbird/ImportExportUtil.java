@@ -1,4 +1,4 @@
-package org.sunbird.util;
+package org.sunbird;
 
 import android.app.Activity;
 import android.content.Context;

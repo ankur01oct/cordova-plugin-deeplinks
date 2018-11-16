@@ -2,34 +2,25 @@ package org.sunbird;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
-import android.support.annotation.NonNull;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.LOG;
 import org.ekstep.genieservices.GenieService;
 import org.ekstep.genieservices.commons.bean.enums.ContentImportStatus;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.sunbird.deeplinks.DeepLinkNavigation;
-import org.sunbird.util.ImportExportUtil;
 
 import java.util.ArrayList;
 
 /**
- * Created by Ankur on 14-Nov-18.
+ * Created by Sunbird Team on 14-Nov-18.
  */
 
 public class DeepLinkImp extends CordovaPlugin{
@@ -147,10 +138,10 @@ public class DeepLinkImp extends CordovaPlugin{
         }
         else if ((splashScr.cordova.hasPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE))) {
           importEcarFile(intent);
-        } else {
+        } else{
           splashScreen.importingInProgress=true;
           splashScreen.displaySplashScreen();
-          splashScr.cordova.requestPermission(splashScreen, 100, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+          splashScreen.cordova.requestPermission(splashScreen, 100, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         }
       }
 
